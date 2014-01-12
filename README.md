@@ -11,7 +11,6 @@ Branch Creation
 To create a release-* and corresponding altiscale-* branch, follow the following process, which assumes that most Altiscale personnel will use this repo -- not the kernel.org repo.
 
 1. Clone the kernel.org linux-stable repo.
-
 ```bash
 $ mkdir kernel-src
 $ cd kernel-src
@@ -26,7 +25,6 @@ $ git checkout -b released-3.12.7 v3.12.7
 ```
 
 3. Set up this repo as a remote in the same git repo.
-
 ```bash
 $ git remote add altiscale git@github.com:Altiscale/linux-stable.git
 ```
