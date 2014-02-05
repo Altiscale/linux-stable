@@ -10,7 +10,7 @@ Branch Creation
 
 To create a release-* and corresponding altiscale-* branch, follow the following process, which assumes that most Altiscale personnel will use this repo -- not the kernel.org repo.
 
-1. Clone the kernel.org linux-stable repo.
+##### Clone the kernel.org linux-stable repo.
 ```bash
 $ mkdir kernel-src
 $ cd kernel-src
@@ -18,23 +18,23 @@ $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.gi
 $ cd linux-stable
 ```
 
-2. Find and check out the appropriate stable kernel.org linux-stable release tag.  For example:
+##### Find and check out the appropriate stable kernel.org linux-stable release tag.  For example:
 ```bash
 $ git tag -l | grep v3.12.7
 $ git checkout -b released-3.12.7 v3.12.7
 ```
 
-3. Set up this repo as a remote in the same git repo.
+##### Set up this repo as a remote in the same git repo.
 ```bash
 $ git remote add altiscale git@github.com:Altiscale/linux-stable.git
 ```
 
-4. Push the released branch to this repo.
+##### Push the released branch to this repo.
 ```bash
 $ git push altiscale released-3.12.7
 ```
 
-5. Clone this repo.
+##### Clone this repo.
 ```bash
 $ cd ../..
 $ mkdir altiscale-src
@@ -43,7 +43,7 @@ $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.gi
 $ cd linux-stable
 ```
 
-6. Check out the released-* branch as a tracking branch and use it to create the altiscale-* branch.  For example:
+##### Check out the released-* branch as a tracking branch and use it to create the altiscale-* branch.  For example:
 ```bash
 $ git branch released-3.12.7 origin/released-3.12.7
 $ git checkout released-3.12.7
@@ -51,7 +51,7 @@ $ git checkout -b altiscale-3.12.7
 $ git push origin altiscale-3.12.7
 ```
 
-7. To make changes, check out a development branch to be used in pull requests.
+##### To make changes, check out a development branch to be used in pull requests.
 ```bash
 $ git checkout -b dc_JIRA-number
 ```
