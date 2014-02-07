@@ -39,7 +39,7 @@ $ git push altiscale released-3.12.7
 $ cd ../..
 $ mkdir altiscale-src
 $ cd altiscale-src
-$ git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+$ git clone git@github.com:Altiscale/linux-stable.git
 $ cd linux-stable
 ```
 
