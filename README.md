@@ -60,4 +60,5 @@ All pull requests should request merges into altiscale-* branches.  release-* br
 
 References
 ----------
-- [Linux Kernel Newbies](http://kernelnewbies.org/) [KernelBuild wiki](http://kernelnewbies.org/KernelBuild)
+- [Linux Kernel Newbies](http://kernelnewbies.org/)
+- [KernelBuild wiki](http://kernelnewbies.org/KernelBuild)
