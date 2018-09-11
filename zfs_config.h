@@ -73,9 +73,6 @@
 /* Define if host toolchain supports AVX512VL */
 /* #undef HAVE_AVX512VL */
 
-/* struct block_device_operations use bdevs */
-#define HAVE_BDEV_BLOCK_DEVICE_OPERATIONS 1
-
 /* bdev_logical_block_size() is available */
 #define HAVE_BDEV_LOGICAL_BLOCK_SIZE 1
 
@@ -142,7 +139,10 @@
 /* blk_queue_write_cache() is GPL-only */
 /* #undef HAVE_BLK_QUEUE_WRITE_CACHE_GPL_ONLY */
 
-/* struct block_device_operations.release returns void */
+/* bops->check_events() exists */
+#define HAVE_BLOCK_DEVICE_OPERATIONS_CHECK_EVENTS 1
+
+/* bops->release() returns void */
 #define HAVE_BLOCK_DEVICE_OPERATIONS_RELEASE_VOID 1
 
 /* security_inode_init_security wants callback */
@@ -338,7 +338,7 @@
 #define HAVE_LIBBLKID 1
 
 /* Define if you have libtirpc */
-/* #undef HAVE_LIBTIRPC */
+#define HAVE_LIBTIRPC 1
 
 /* Define if you have libudev */
 #define HAVE_LIBUDEV 1
@@ -630,7 +630,7 @@
 /* #undef ZFS_IS_GPL_COMPATIBLE */
 
 /* Define the project alias string. */
-#define ZFS_META_ALIAS "zfs-0.7.9-1"
+#define ZFS_META_ALIAS "zfs-0.7.10-1"
 
 /* Define the project author. */
 #define ZFS_META_AUTHOR "OpenZFS on Linux"
@@ -657,5 +657,5 @@
 #define ZFS_META_RELEASE "1"
 
 /* Define the project version. */
-#define ZFS_META_VERSION "0.7.9"
+#define ZFS_META_VERSION "0.7.10"
 

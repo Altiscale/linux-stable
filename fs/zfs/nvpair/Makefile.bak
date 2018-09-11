@@ -1,4 +1,4 @@
-src = /git/zfs/module/nvpair
+src = /work/git/zfs/module/nvpair
 
 MODULE := znvpair
 

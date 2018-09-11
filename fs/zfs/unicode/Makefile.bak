@@ -1,4 +1,4 @@
-src = /git/zfs/module/unicode
+src = /work/git/zfs/module/unicode
 
 MODULE := zunicode
 

@@ -1,4 +1,4 @@
-src = /git/zfs/module/icp
+src = /work/git/zfs/module/icp
 
 MODULE := icp
 

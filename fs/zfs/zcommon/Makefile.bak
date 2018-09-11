@@ -1,4 +1,4 @@
-src = /git/zfs/module/zcommon
+src = /work/git/zfs/module/zcommon
 
 MODULE := zcommon
 

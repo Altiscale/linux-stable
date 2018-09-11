@@ -9,8 +9,8 @@ subdir-m += icp
 INSTALL_MOD_DIR ?= extra
 
 ZFS_MODULE_CFLAGS += -include ../spl/spl_config.h
-ZFS_MODULE_CFLAGS += -include /git/zfs/zfs_config.h
-ZFS_MODULE_CFLAGS += -I/git/zfs/include -I../spl/include -I../spl
+ZFS_MODULE_CFLAGS += -include /work/git/zfs/zfs_config.h
+ZFS_MODULE_CFLAGS += -I/work/git/zfs/include -I../spl/include -I../spl
 #ZFS_MODULE_CFLAGS += -I/include
 #KBUILD_EXTRA_SYMBOLS += 
 export ZFS_MODULE_CFLAGS
@@ -36,12 +36,12 @@ modules:
 	list='$(SUBDIR_TARGETS)'; for targetdir in $$list; do \
 		$(MAKE) -C $$targetdir; \
 	done
-	$(MAKE) -C ../linux-stable/ SUBDIRS=`pwd`  CONFIG_ZFS=m $@
+	$(MAKE) -C ../linux-stable SUBDIRS=`pwd`  CONFIG_ZFS=m $@
 
 clean:
 	@# Only cleanup the kernel build directories when CONFIG_KERNEL
 	@# is defined.  This indicates that kernel modules should be built.
-#	$(MAKE) -C ../linux-stable/ SUBDIRS=`pwd`  $@
+#	$(MAKE) -C ../linux-stable SUBDIRS=`pwd`  $@
 
 	if [ -f NONE ]; then $(RM) NONE; fi
 	if [ -f NONE ]; then $(RM) NONE; fi
@@ -49,7 +49,7 @@ clean:
 
 modules_install:
 	@# Install the kernel modules
-	$(MAKE) -C ../linux-stable/ SUBDIRS=`pwd` $@ \
+	$(MAKE) -C ../linux-stable SUBDIRS=`pwd` $@ \
 		INSTALL_MOD_PATH=$(DESTDIR)$(INSTALL_MOD_PATH) \
 		INSTALL_MOD_DIR=$(INSTALL_MOD_DIR) \
 		KERNELRELEASE=4.14.68+

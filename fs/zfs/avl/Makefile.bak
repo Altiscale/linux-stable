@@ -1,4 +1,4 @@
-src = /git/zfs/module/avl
+src = /work/git/zfs/module/avl
 
 MODULE := zavl
 

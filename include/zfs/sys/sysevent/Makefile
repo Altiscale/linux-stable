@@ -47,7 +47,6 @@ am__aclocal_m4_deps = $(top_srcdir)/config/always-arch.m4 \
 	$(top_srcdir)/config/kernel-acl.m4 \
 	$(top_srcdir)/config/kernel-aio-fsync.m4 \
 	$(top_srcdir)/config/kernel-automount.m4 \
-	$(top_srcdir)/config/kernel-bdev-block-device-operations.m4 \
 	$(top_srcdir)/config/kernel-bdev-logical-size.m4 \
 	$(top_srcdir)/config/kernel-bdev-physical-size.m4 \
 	$(top_srcdir)/config/kernel-bdi.m4 \
@@ -66,7 +65,7 @@ am__aclocal_m4_deps = $(top_srcdir)/config/always-arch.m4 \
 	$(top_srcdir)/config/kernel-blk-queue-unplug.m4 \
 	$(top_srcdir)/config/kernel-blkdev-get-by-path.m4 \
 	$(top_srcdir)/config/kernel-blkdev-get.m4 \
-	$(top_srcdir)/config/kernel-block-device-operations-release-void.m4 \
+	$(top_srcdir)/config/kernel-block-device-operations.m4 \
 	$(top_srcdir)/config/kernel-clear-inode.m4 \
 	$(top_srcdir)/config/kernel-commit-metadata.m4 \
 	$(top_srcdir)/config/kernel-create-nameidata.m4 \
@@ -199,15 +198,15 @@ HEADERS = $(kernel_HEADERS) $(libzfs_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /git/zfs/config/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /work/git/zfs/config/missing --run aclocal-1.11
 ALIEN = alien
 ALIEN_VERSION = 
-AMTAR = ${SHELL} /git/zfs/config/missing --run tar
+AMTAR = ${SHELL} /work/git/zfs/config/missing --run tar
 AM_DEFAULT_VERBOSITY = 0
 AR = ar
-AUTOCONF = ${SHELL} /git/zfs/config/missing --run autoconf
-AUTOHEADER = ${SHELL} /git/zfs/config/missing --run autoheader
-AUTOMAKE = ${SHELL} /git/zfs/config/missing --run automake-1.11
+AUTOCONF = ${SHELL} /work/git/zfs/config/missing --run autoconf
+AUTOHEADER = ${SHELL} /work/git/zfs/config/missing --run autoheader
+AUTOMAKE = ${SHELL} /work/git/zfs/config/missing --run automake-1.11
 AWK = gawk
 CC = gcc
 CCAS = gcc
@@ -270,20 +269,20 @@ LIBAIO =
 LIBBLKID = -lblkid
 LIBOBJS = 
 LIBS = -luuid -lz 
-LIBTIRPC = 
-LIBTIRPC_CFLAGS = 
+LIBTIRPC = -ltirpc
+LIBTIRPC_CFLAGS = -I/usr/include/tirpc
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBUDEV = -ludev
 LIBUUID = -luuid
-LINUX = ../linux-stable/
-LINUX_OBJ = ../linux-stable/
+LINUX = ../linux-stable
+LINUX_OBJ = ../linux-stable
 LINUX_SYMBOLS = NONE
 LINUX_VERSION = 4.14.68+
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /git/zfs/config/missing --run makeinfo
+MAKEINFO = ${SHELL} /work/git/zfs/config/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 MULTIARCH_LIBDIR = 
 NM = /usr/bin/nm -B
@@ -298,9 +297,9 @@ OTOOL64 =
 PACKAGE = zfs
 PACKAGE_BUGREPORT = 
 PACKAGE_NAME = zfs
-PACKAGE_STRING = zfs 0.7.9
+PACKAGE_STRING = zfs 0.7.10
 PACKAGE_TARNAME = zfs
-PACKAGE_VERSION = 0.7.9
+PACKAGE_VERSION = 0.7.10
 PATH_SEPARATOR = :
 QAT_OBJ = 
 QAT_SRC = 
@@ -323,7 +322,7 @@ SHELL = /bin/sh
 SPL = ../spl
 SPL_OBJ = ../spl
 SPL_SYMBOLS = NONE
-SPL_VERSION = 0.7.9-1
+SPL_VERSION = 0.7.10-1
 SRPM_DEFINE_COMMON = --define "build_src_rpm 1"
 SRPM_DEFINE_DKMS = 
 SRPM_DEFINE_KMOD = 
@@ -331,11 +330,11 @@ SRPM_DEFINE_UTIL =
 STRIP = strip
 TARGET_ASM_DIR = asm-x86_64
 VENDOR = redhat
-VERSION = 0.7.9
+VERSION = 0.7.10
 ZFS_CONFIG = all
 ZFS_INIT_SYSTEMD = 
 ZFS_INIT_SYSV = init.d
-ZFS_META_ALIAS = zfs-0.7.9-1
+ZFS_META_ALIAS = zfs-0.7.10-1
 ZFS_META_AUTHOR = OpenZFS on Linux
 ZFS_META_DATA = 
 ZFS_META_LICENSE = CDDL
@@ -344,14 +343,14 @@ ZFS_META_LT_CURRENT =
 ZFS_META_LT_REVISION = 
 ZFS_META_NAME = zfs
 ZFS_META_RELEASE = 1
-ZFS_META_VERSION = 0.7.9
+ZFS_META_VERSION = 0.7.10
 ZFS_MODULE_LOAD = 
 ZLIB = -lz
 ZONENAME = echo global
-abs_builddir = /git/zfs/include/sys/sysevent
-abs_srcdir = /git/zfs/include/sys/sysevent
-abs_top_builddir = /git/zfs
-abs_top_srcdir = /git/zfs
+abs_builddir = /work/git/zfs/include/sys/sysevent
+abs_srcdir = /work/git/zfs/include/sys/sysevent
+abs_top_builddir = /work/git/zfs
+abs_top_srcdir = /work/git/zfs
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
 am__include = include
@@ -380,7 +379,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /git/zfs/config/install-sh
+install_sh = ${SHELL} /work/git/zfs/config/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
