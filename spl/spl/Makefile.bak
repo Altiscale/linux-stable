@@ -1,6 +1,6 @@
 # Makefile.in for spl kernel module
 
-src = /git/spl/module/spl
+src = /work/git/spl/module/spl
 
 MODULE := spl
 EXTRA_CFLAGS = $(SPL_MODULE_CFLAGS)  -Wstrict-prototypes -DNDEBUG

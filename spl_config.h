@@ -58,6 +58,9 @@
 /* yes */
 #define HAVE_INODE_LOCK_SHARED 1
 
+/* inode->i_*time's are timespec64 */
+/* #undef HAVE_INODE_TIMESPEC64_TIMES */
+
 /* truncate_range() inode operation is available */
 /* #undef HAVE_INODE_TRUNCATE_RANGE */
 
@@ -159,7 +162,7 @@
 #define SPL_IS_GPL_COMPATIBLE 1
 
 /* Define the project alias string. */
-#define SPL_META_ALIAS "spl-0.7.9-1"
+#define SPL_META_ALIAS "spl-0.7.10-1"
 
 /* Define the project author. */
 #define SPL_META_AUTHOR "OpenZFS on Linux"
@@ -186,5 +189,5 @@
 #define SPL_META_RELEASE "1"
 
 /* Define the project version. */
-#define SPL_META_VERSION "0.7.9"
+#define SPL_META_VERSION "0.7.10"
 

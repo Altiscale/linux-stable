@@ -3,24 +3,24 @@ subdir-m += splat
 
 INSTALL_MOD_DIR ?= extra
 
-SPL_MODULE_CFLAGS  = -I/git/spl/include
-SPL_MODULE_CFLAGS += -include /git/spl/spl_config.h
+SPL_MODULE_CFLAGS  = -I/work/git/spl/include
+SPL_MODULE_CFLAGS += -include /work/git/spl/spl_config.h
 export SPL_MODULE_CFLAGS
 
 modules:
-	$(MAKE) -C ../linux-stable/ SUBDIRS=`pwd`  CONFIG_SPL=m $@
+	$(MAKE) -C ../linux-stable SUBDIRS=`pwd`  CONFIG_SPL=m $@
 
 clean:
 	@# Only cleanup the kernel build directories when CONFIG_KERNEL
 	@# is defined.  This indicates that kernel modules should be built.
-#	$(MAKE) -C ../linux-stable/ SUBDIRS=`pwd`  $@
+#	$(MAKE) -C ../linux-stable SUBDIRS=`pwd`  $@
 
 	if [ -f NONE ]; then $(RM) NONE; fi
 	if [ -f Module.markers ]; then $(RM) Module.markers; fi
 
 modules_install:
 	@# Install the kernel modules
-	$(MAKE) -C ../linux-stable/ SUBDIRS=`pwd` $@ \
+	$(MAKE) -C ../linux-stable SUBDIRS=`pwd` $@ \
 		INSTALL_MOD_PATH=$(DESTDIR)$(INSTALL_MOD_PATH) \
 		INSTALL_MOD_DIR=$(INSTALL_MOD_DIR) \
 		KERNELRELEASE=4.14.68+

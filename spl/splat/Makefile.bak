@@ -1,6 +1,6 @@
 # Makefile.in for splat kernel module
 
-src = /git/spl/module/splat
+src = /work/git/spl/module/splat
 
 MODULE := splat
 EXTRA_CFLAGS = $(SPL_MODULE_CFLAGS)  -Wstrict-prototypes -DNDEBUG
