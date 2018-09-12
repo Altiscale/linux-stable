@@ -39,8 +39,6 @@ fi
 
 echo "BuildRoot: %{_tmppath}/%{name}-%{PACKAGE_VERSION}-root"
 echo "Provides: $PROVIDES"
-echo "Provides: kmod-zfs = 0.7.10"
-echo "Provides: kmod-spl = 0.7.10"
 echo "%define __spec_install_post /usr/lib/rpm/brp-compress || :"
 echo "%define debug_package %{nil}"
 echo ""
